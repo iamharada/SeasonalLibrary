@@ -1,4 +1,4 @@
-package controller;
+package servlet.users;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
