@@ -1,4 +1,4 @@
-package servlet.users;
+package presentation.servlet.users;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
