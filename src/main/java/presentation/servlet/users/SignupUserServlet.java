@@ -24,7 +24,7 @@ public class SignupUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
-        // SignUpForm form = new SignUpForm(name, email, password, confirmPassword);
+        SignUpForm form = new SignUpForm(name, email, password, confirmPassword);
 
         // // エラーをまとめて管理するリストを作成する. 
         // List<String> errors = form.validate();
