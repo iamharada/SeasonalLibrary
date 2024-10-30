@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignUpForm {
+public class SignUpUserForm {
     // このクラスから作成されたオブジェクトはコントロールへの入力の際に一度用いられるのみなので、各フィールドが変更可能である必要はない。
     // そこで、`private`修飾子付きのフィールドとゲッターメソッドを定義する代わりに、
     // 各フィールドに`final`修飾子を付けることで、読み取り専用の変更不可能なフィールドを定義している。
