@@ -8,13 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import business.service.users.SignupUser;
+
 @WebServlet("/signup")
 public class SignupUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/jsp/signup.jsp").forward(request, response);
     }
     
-    // POSTメソッドの処理は別途実装
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // リクエストのエンコーディングを行う. 
         request.setCharacterEncoding("UTF-8");
@@ -31,32 +32,17 @@ public class SignupUserServlet extends HttpServlet {
 
         try{
             // サービスに入力用オブジェクトを渡して処理を実行し、その結果を得る
-            
+            SignupUserResultDTO result = signupUser.execute(form);
+
+            // 結果をセッションスコープに保存する
+            request.getSession().setAttribute("user", result.getUserDTO());
+
+            // 結果を表示するためのJSPにフォワードする
+            request.getRequestDispatcher("/WEB-INF/jsp/signup-success.jsp").forward(request, response);
         }catch(Failure failure){
-            
+            // エラーが発生した場合は、エラーメッセージをリクエストスコープに保存して、入力フォームを再表示する
+            request.setAttribute("error", failure.getMessage());
+            request.getRequestDispatcher("/WEB-INF/jsp/signup.jsp").forward(request, response);
         }
-        // // フォーム内容のバリデーションを行う. （確認用パスワードが一致しているかなど、フォームの内容確認をする。）
-        // if (errors.isEmpty()) {
-        //     try {
-        //         SignUpDTO signUpDTO = new SignUpDTO(form.getName(), form.getEmail(), form.getPassword());
-        //         SignUpUserService signUpUserService = new SignUpUserService();
-        //         SignUpResultDTO result = signUpUserService.execute(signUpDTO);
-
-        //         if (result.isSuccess()) {
-        //             request.getSession().setAttribute("user", result.getUserDTO());
-        //             request.getRequestDispatcher("/WEB-INF/jsp/signup-success.jsp").forward(request, response);
-        //             return;
-        //         } else {
-        //             errors = result.getErrors();
-        //         }
-        //     } catch (Failure failure) {
-        //         errors.add(failure.getMessage());
-        //     }
-        // }
-
-        // // エラーがある場合の処理
-        // request.setAttribute("form", form);
-        // request.setAttribute("errors", errors);
-        // request.getRequestDispatcher("/WEB-INF/jsp/signup.jsp").forward(request, response);
     }
 }
