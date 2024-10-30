@@ -34,14 +34,15 @@ public class SignupUserServlet extends HttpServlet {
             // サービスに入力用オブジェクトを渡して処理を実行し、その結果を得る
             SignupUserResultDTO result = signupUser.execute(form);
 
-            // 結果をセッションスコープに保存する
-            request.getSession().setAttribute("user", result.getUserDTO());
+            // 結果をリクエストスコープに保存する
+            request.setAttribute("user", result.getUserDTO());
 
             // 結果を表示するためのJSPにフォワードする
             request.getRequestDispatcher("/WEB-INF/jsp/signup-success.jsp").forward(request, response);
         }catch(Failure failure){
             // エラーが発生した場合は、エラーメッセージをリクエストスコープに保存して、入力フォームを再表示する
             request.setAttribute("error", failure.getMessage());
+            request.setAttribute("form", form);
             request.getRequestDispatcher("/WEB-INF/jsp/signup.jsp").forward(request, response);
         }
     }
