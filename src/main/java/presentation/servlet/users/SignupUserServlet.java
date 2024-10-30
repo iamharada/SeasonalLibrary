@@ -19,16 +19,22 @@ public class SignupUserServlet extends HttpServlet {
         // リクエストのエンコーディングを行う. 
         request.setCharacterEncoding("UTF-8");
 
-        // リクエストに含まれるパラメータの値を得て, コントロールへの入力用のオブジェクトにまとめる. 
+        // リクエストに含まれるパラメータの値を得て, サービスへの入力用のオブジェクトにまとめる. 
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
         SignUpForm form = new SignUpForm(name, email, password, confirmPassword);
 
-        // // エラーをまとめて管理するリストを作成する. 
-        // List<String> errors = form.validate();
+        // ビジネスロジック層の窓口であるサービスをインスタンス化する.
+        SignupUser signupUser = new SignupUser();
 
+        try{
+            // サービスに入力用オブジェクトを渡して処理を実行し、その結果を得る
+            
+        }catch(Failure failure){
+            
+        }
         // // フォーム内容のバリデーションを行う. （確認用パスワードが一致しているかなど、フォームの内容確認をする。）
         // if (errors.isEmpty()) {
         //     try {
