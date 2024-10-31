@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import dataaccess.entity.User;
+import dataaccess.exception.DaoException;
 
 /**
  * ユーザー情報のデータベースアクセスを行うDAO。
