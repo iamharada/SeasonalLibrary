@@ -1,4 +1,4 @@
-package entity;
+package dataaccess.entity;
 
 public class User {
     public final String name;

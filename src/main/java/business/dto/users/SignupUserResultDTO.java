@@ -1,6 +1,6 @@
-package business.service.users;
+package business.dto.users;
 
-import entity.User;
+import dataaccess.entity.User;
 
 /**
  * {@link SignupUser#execute(SignUpForm)}の結果の出力に用いるオブジェクト。

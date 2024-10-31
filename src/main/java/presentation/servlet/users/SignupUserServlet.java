@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import presentation.form.users.SignupUserForm;
 import business.service.users.SignupUser;
+import business.dto.users.SignupUserResultDTO;
+import business.exception.*;
 
 @WebServlet("/signup")
 public class SignupUserServlet extends HttpServlet {
@@ -25,7 +28,7 @@ public class SignupUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
-        SignUpForm form = new SignUpForm(name, email, password, confirmPassword);
+        SignupUserForm form = new SignupUserForm(name, email, password, confirmPassword);
 
         // ビジネスロジック層の窓口であるサービスをインスタンス化する.
         SignupUser signupUser = new SignupUser();
