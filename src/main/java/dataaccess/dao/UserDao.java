@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import entity.User;
+
+import dataaccess.entity.User;
 
 /**
  * ユーザー情報のデータベースアクセスを行うDAO。
  */
-public class UserDao {
+public class UserDAO {
     /**
      * ユーザー情報を新規登録する。
      *
