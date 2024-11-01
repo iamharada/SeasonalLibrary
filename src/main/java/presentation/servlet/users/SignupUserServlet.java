@@ -38,7 +38,7 @@ public class SignUpUserServlet extends HttpServlet {
             SignUpUserResultDTO result = signUpUser.execute(form);
 
             // 結果をリクエストスコープに保存する
-            request.setAttribute("user", result.getUserDTO());
+            request.setAttribute("user", result.getUser());
 
             // 結果を表示するためのJSPにフォワードする
             request.getRequestDispatcher("/WEB-INF/jsp/signup-success.jsp").forward(request, response);
