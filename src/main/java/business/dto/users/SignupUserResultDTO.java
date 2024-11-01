@@ -18,4 +18,9 @@ public class SignUpUserResultDTO {
         this.user = user;
         this.message = message;
     }
+
+    // getter
+    public User getUser() {
+        return user;
+    }
 }

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import dataaccess.entity.User;
 import dataaccess.exception.DaoException;
+import dataaccess.dbUtil.DBManager;
 
 /**
  * ユーザー情報のデータベースアクセスを行うDAO。

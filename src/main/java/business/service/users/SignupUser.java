@@ -52,7 +52,7 @@ public class SignUpUser {
      * @param form 検証する入力フォーム
      * @throws Failure 検証に失敗した場合
      */
-    private void validate(SignUpUserForm form) throws Failure {
+    private void validate(SignUpUserForm form) throws Failure, DaoException {
         UserDAO userDAO = new UserDAO();
 
         // メールアドレスの重複チェック
