@@ -14,4 +14,5 @@
 
 | ユースケース名 | ビュー(jsp) | コントロール(Servlet) | サービス | DAO | エンティティ |  
 |--------------|------|------|------|------|------|
-|サインアップ|signup.jsp|SignupUserServlet.java|SignUpUser.jsp|UserDAO.java|User.java|
+|サインアップ|signup.jsp|SignUpUserServlet.java|SignUpUser.java|UserDAO.java|User.java|
+|ログイン|login.jsp|LogInUserServlet.java|LogInUser.java|UserDAO.java|User.java|
