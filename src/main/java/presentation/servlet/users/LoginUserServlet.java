@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import presentation.form.LoginUserForm;
+
 /**
  * ログイン処理を行うサーブレット
  */
@@ -28,27 +30,27 @@ public class LoginUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        // try {
-        //     // フォームオブジェクトの作成
-        //     LoginForm form = new LoginForm(email, password);
+        try {
+            // フォームオブジェクトの作成
+            LoginUserForm form = new LoginForm(email, password);
             
-        //     // ログインサービスの実行
-        //     LoginService loginService = new LoginService();
-        //     LoginResultDTO result = loginService.execute(form);
+            // // ログインサービスの実行
+            // LoginService loginService = new LoginService();
+            // LoginResultDTO result = loginService.execute(form);
 
-        //     // セッションの取得（なければ作成）
-        //     HttpSession session = request.getSession();
+            // // セッションの取得（なければ作成）
+            // HttpSession session = request.getSession();
             
-        //     // ログイン成功時の処理
-        //     session.setAttribute("user", result.getUser());
+            // // ログイン成功時の処理
+            // session.setAttribute("user", result.getUser());
             
-        //     // ホームページへリダイレクト
-        //     response.sendRedirect(request.getContextPath() + "/");
+            // // ホームページへリダイレクト
+            // response.sendRedirect(request.getContextPath() + "/");
 
-        // } catch (Failure failure) {
-        //     // ログイン失敗時の処理
-        //     request.setAttribute("error", failure.getMessage());
-        //     request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
-        // }
+        } catch (Failure failure) {
+            // // ログイン失敗時の処理
+            // request.setAttribute("error", failure.getMessage());
+            // request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+        }
     }
 }
