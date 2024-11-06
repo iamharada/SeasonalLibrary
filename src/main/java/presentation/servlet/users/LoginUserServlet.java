@@ -26,34 +26,34 @@ public class LoginUserServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    // protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    //         throws ServletException, IOException {
         
-        // リクエストパラメータの取得
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
+    //     // リクエストパラメータの取得
+    //     String email = request.getParameter("email");
+    //     String password = request.getParameter("password");
 
-        try {
-            // フォームオブジェクトの作成
-            LoginUserForm form = new LoginUserForm(email, password);
+    //     try {
+    //         // フォームオブジェクトの作成
+    //         LoginUserForm form = new LoginUserForm(email, password);
             
-            // ログインサービスの実行
-            // LoginUser service = new LoginUser();
-            // LoginResultDTO result = loginService.execute(form);
+    //         // ログインサービスの実行
+    //         // LoginUser service = new LoginUser();
+    //         // LoginResultDTO result = loginService.execute(form);
 
-            // // セッションの取得（なければ作成）
-            // HttpSession session = request.getSession();
+    //         // // セッションの取得（なければ作成）
+    //         // HttpSession session = request.getSession();
             
-            // // ログイン成功時の処理
-            // session.setAttribute("user", result.getUser());
+    //         // // ログイン成功時の処理
+    //         // session.setAttribute("user", result.getUser());
             
-            // // ホームページへリダイレクト
-            // response.sendRedirect(request.getContextPath() + "/");
+    //         // // ホームページへリダイレクト
+    //         // response.sendRedirect(request.getContextPath() + "/");
 
-        } catch (Failure failure) {
-            // // ログイン失敗時の処理
-            // request.setAttribute("error", failure.getMessage());
-            // request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
-        }
-    }
+    //     } catch (Failure failure) {
+    //         // // ログイン失敗時の処理
+    //         // request.setAttribute("error", failure.getMessage());
+    //         // request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+    //     }
+    // }
 }
