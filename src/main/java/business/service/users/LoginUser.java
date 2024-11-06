@@ -21,28 +21,28 @@ public class LoginUser {
      * @return ログイン結果DTO
      * @throws Failure ログインに失敗した場合
      */
-    public LoginUserResultDTO execute(LoginUserForm form) throws Failure {
-        try {
-            // メールアドレスでユーザーを検索
-            User user = userDAO.getByEmail(form.getEmail());
+    // public LoginUserResultDTO execute(LoginUserForm form) throws Failure {
+    //     try {
+    //         // メールアドレスでユーザーを検索
+    //         User user = userDAO.getByEmail(form.getEmail());
 
-            // ユーザーが存在しない場合
-            if (user == null) {
-                throw new Failure("メールアドレスまたはパスワードが間違っています");
-            }
+    //         // ユーザーが存在しない場合
+    //         if (user == null) {
+    //             throw new Failure("メールアドレスまたはパスワードが間違っています");
+    //         }
 
-            // パスワードの検証
-            if (!verifyPassword(form.getPassword(), user.getPasswordHash())) {
-                throw new Failure("メールアドレスまたはパスワードが間違っています");
-            }
+    //         // パスワードの検証
+    //         if (!verifyPassword(form.getPassword(), user.getPasswordHash())) {
+    //             throw new Failure("メールアドレスまたはパスワードが間違っています");
+    //         }
 
-            // ログイン成功
-            return new LoginUserResultDTO(user, "ログインに成功しました");
+    //         // ログイン成功
+    //         return new LoginUserResultDTO(user, "ログインに成功しました");
 
-        } catch (DaoException e) {
-            throw new Failure("ログイン処理に失敗しました", e);
-        }
-    }
+    //     } catch (DaoException e) {
+    //         throw new Failure("ログイン処理に失敗しました", e);
+    //     }
+    // }
 
     /**
      * パスワードの検証を行う
