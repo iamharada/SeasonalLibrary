@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import presentation.form.users.SignUpUserForm;
-import business.service.users.SignUpUser;
-import business.dto.users.SignUpUserResultDTO;
+import presentation.form.users.SignupUserForm;
+import business.service.users.SignupUser;
+import business.dto.users.SignupUserResultDTO;
 import business.exception.*;
 
 @WebServlet("/signup")
-public class SignUpUserServlet extends HttpServlet {
+public class SignupUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/jsp/signup.jsp").forward(request, response);
     }
@@ -28,14 +28,14 @@ public class SignUpUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
-        SignUpUserForm form = new SignUpUserForm(name, email, password, confirmPassword);
+        SignupUserForm form = new SignupUserForm(name, email, password, confirmPassword);
 
         // ビジネスロジック層の窓口であるサービスをインスタンス化する.
-        SignUpUser signUpUser = new SignUpUser();
+        SignupUser signupUser = new SignupUser();
 
         try{
             // サービスに入力用オブジェクトを渡して処理を実行し、その結果を得る
-            SignUpUserResultDTO result = signUpUser.execute(form);
+            SignupUserResultDTO result = signupUser.execute(form);
 
             // 結果をリクエストスコープに保存する
             request.setAttribute("user", result.getUser());
