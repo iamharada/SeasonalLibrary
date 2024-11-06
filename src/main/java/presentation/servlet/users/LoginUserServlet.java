@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import presentation.form.LoginUserForm;
+import presentation.form.users.LoginUserForm;
+import business.service.users.LoginUser;
+import business.dto.users.LoginUserResultDTO;
+import business.exception.Failure;
 
 /**
  * ログイン処理を行うサーブレット
@@ -32,10 +35,10 @@ public class LoginUserServlet extends HttpServlet {
 
         try {
             // フォームオブジェクトの作成
-            LoginUserForm form = new LoginForm(email, password);
+            LoginUserForm form = new LoginUserForm(email, password);
             
-            // // ログインサービスの実行
-            // LoginService loginService = new LoginService();
+            // ログインサービスの実行
+            // LoginUser service = new LoginUser();
             // LoginResultDTO result = loginService.execute(form);
 
             // // セッションの取得（なければ作成）
