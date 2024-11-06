@@ -1,7 +1,7 @@
 package business.service.users;
 
-import presentation.form.users.SignUpUserForm;
-import business.dto.users.SignUpUserResultDTO;
+import presentation.form.users.SignupUserForm;
+import business.dto.users.SignupUserResultDTO;
 import business.exception.Failure;
 import dataaccess.dao.UserDAO;
 import dataaccess.exception.DaoException;
@@ -14,21 +14,21 @@ import java.nio.charset.StandardCharsets;
 /**
  * ユーザー登録を行うビジネスロジッククラス。
  */
-public class SignUpUser {
+public class SignupUser {
     private final UserDAO userDAO;
 
-    public SignUpUser() {
+    public SignupUser() {
         this.userDAO = new UserDAO();
     }
 
     /**
      * ユーザー登録を実行する。
      * 
-     * @param form 登録するユーザーの情報を{@link SignUpForm}型のオブジェクトにまとめたものを入力とする。
+     * @param form 登録するユーザーの情報を{@link SignupForm}型のオブジェクトにまとめたものを入力とする。
      * @return 登録に成功した場合は、{@link SignupUserResultDTO}型のオブジェクトを返す。
      * @throws Failure 登録に失敗した場合は、{@link Failure}型の例外を投げる。
      */
-    public SignUpUserResultDTO execute(SignUpUserForm form) throws Failure {
+    public SignupUserResultDTO execute(SignupUserForm form) throws Failure {
         try {
             // 入力値の検証
             validate(form);
@@ -43,7 +43,7 @@ public class SignUpUser {
             userDAO.create(user);
 
             // 登録に成功したことを意味する情報を返す
-            SignUpUserResultDTO result = new SignUpUserResultDTO(user, "ユーザー登録に成功しました");
+            SignupUserResultDTO result = new SignupUserResultDTO(user, "ユーザー登録に成功しました");
             return result;
 
         } catch (Failure failure) {
@@ -63,7 +63,7 @@ public class SignUpUser {
      * @throws Failure 検証に失敗した場合
      * @throws DaoException データベースアクセスに失敗した場合
      */
-    private void validate(SignUpUserForm form) throws Failure, DaoException {
+    private void validate(SignupUserForm form) throws Failure, DaoException {
         // メールアドレスの重複チェック
         if (userDAO.findByEmail(form.getEmail())) {
             throw new Failure("このメールアドレスは既に登録されています");

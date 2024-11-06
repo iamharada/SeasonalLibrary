@@ -6,7 +6,7 @@ import dataaccess.entity.User;
  * {@link SignupUser#execute(SignUpForm)}の結果の出力に用いるオブジェクト。
  * 登録されたユーザーの情報を表すエンティティオブジェクトと登録結果のメッセージをまとめる。
  */
-public class SignUpUserResultDTO {
+public class SignupUserResultDTO {
     // 登録されたユーザーの情報を表すエンティティオブジェクト
     public final User user;
 
@@ -14,7 +14,7 @@ public class SignUpUserResultDTO {
     public final String message;
 
     // コンストラクタ
-    public SignUpUserResultDTO(User user, String message) {
+    public SignupUserResultDTO(User user, String message) {
         this.user = user;
         this.message = message;
     }
