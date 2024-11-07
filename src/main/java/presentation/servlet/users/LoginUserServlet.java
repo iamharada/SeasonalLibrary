@@ -24,7 +24,7 @@ public class LoginUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // ログインページにフォワード
-        request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/users/login.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,7 +54,7 @@ public class LoginUserServlet extends HttpServlet {
         } catch (Failure failure) {
             // // ログイン失敗時の処理
             request.setAttribute("error", failure.getMessage());
-            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/users/login.jsp").forward(request, response);
         }
     }
 }
