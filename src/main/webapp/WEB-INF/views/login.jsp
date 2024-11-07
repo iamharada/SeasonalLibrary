@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>ログイン - Seasonal Library</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
     <div class="container">
@@ -18,7 +17,7 @@
             </div>
         </c:if>
         
-        <form action="${pageContext.request.contextPath}/login" method="post">
+        <form action="/login" method="post">
             <div class="form-group">
                 <label for="email">メールアドレス:</label>
                 <input type="email" id="email" name="email" value="${param.email}" required>
