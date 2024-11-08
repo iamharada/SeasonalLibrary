@@ -16,7 +16,7 @@ import business.exception.*;
 @WebServlet("/signup")
 public class SignupUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/auth/signup.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/users/signup.jsp").forward(request, response);
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,12 +41,12 @@ public class SignupUserServlet extends HttpServlet {
             request.setAttribute("user", result.getUser());
 
             // 結果を表示するためのJSPにフォワードする
-            request.getRequestDispatcher("/WEB-INF/views/auth/signup-success.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/users/signup-success.jsp").forward(request, response);
         }catch(Failure failure){
             // エラーが発生した場合は、エラーメッセージをリクエストスコープに保存して、入力フォームを再表示する
             request.setAttribute("error", failure.getMessage());
             request.setAttribute("form", form);
-            request.getRequestDispatcher("/WEB-INF/views/auth/signup.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/users/signup.jsp").forward(request, response);
         }
     }
 }
