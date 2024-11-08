@@ -9,6 +9,6 @@
     <p>Congratulations! Your sign up was successful.</p>
     <p>Thank you for joining our community, <%= request.getAttribute("username") %>!</p>
     
-    <a href="/hello">Go back to the initial page</a>
+    <a href="/home">Go back to the initial page</a>
 </body>
 </html>
