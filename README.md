@@ -68,5 +68,6 @@ docker-compose up -d
 
 #### 3. DBの初期化
 ```bash
-docker-compose exec mysql mysql -u root -p < init.sql >
+docker-compose exec -it < DBのコンテナ名 > bash
+mysql -u root -p < init.sql >
 ```
