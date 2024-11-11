@@ -49,7 +49,7 @@ public class LoginUserServlet extends HttpServlet {
             session.setAttribute("user", result.getUser());
             
             // ホームページへリダイレクト
-            response.sendRedirect(request.getContextPath() + "/home");
+            response.sendRedirect(request.getContextPath() + "/mypage");
 
         } catch (Failure failure) {
             // // ログイン失敗時の処理
