@@ -7,15 +7,10 @@
 ### 1-1. プロジェクト概要
 Seasonal Libraryは, 四季や月ごとに本を整理し、読書習慣の形成をサポートするウェブアプリケーションです。
 
-### 1-2. 開発環境
-- 開発言語：Java
-- フレームワーク：Servlet/JSP
-- データベース：MySQL
-- 開発環境：Docker
-  - Gradleコンテナ（ビルド用）
-  - Tomcatコンテナ（アプリケーションサーバ）
-  - MySQLコンテナ（データベース）
-- 構成管理：docker-compose
+### 1-2. 開発環境 
+|開発言語|フレームワーク|データベース|開発環境（docker-composeでまとめて管理）|
+|---|---|---|---|
+|![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)|![Servlet/JSP](https://img.shields.io/badge/-Servlet/JSP-007396.svg?logo=Servlet/JSP&style=for-the-badge)|![Mysql](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)|![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=Gradle&logoColor=white)  ![ApacheTomcat](https://img.shields.io/badge/Apache%20Tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=black)  ![Mysql](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)|
 
 ## 2. 機能要件
 ### 2-1. 認証・アカウント管理機能
