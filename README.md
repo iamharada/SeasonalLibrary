@@ -14,6 +14,9 @@ Seasonal Libraryは, 四季や月ごとに本を整理し、読書習慣の形�
 |---|---|---|---|
 |![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)|![Servlet/JSP](https://img.shields.io/badge/-Servlet/JSP-007396.svg?logo=Servlet/JSP&style=for-the-badge)|![Mysql](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)|![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=Gradle&logoColor=white)  ![ApacheTomcat](https://img.shields.io/badge/Apache%20Tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=black)  ![Mysql](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)|
 
+### 1-3. ディレクトリ構成
+後日記載
+
 <br>
 
 ## 2. 機能要件
@@ -51,7 +54,7 @@ Seasonal Libraryは, 四季や月ごとに本を整理し、読書習慣の形�
 <br>
 
 ## 4. DB設計
-後に記述
+後日記載
 
 <br>
 
