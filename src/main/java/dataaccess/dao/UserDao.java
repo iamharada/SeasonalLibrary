@@ -70,6 +70,40 @@ public class UserDAO {
     }
 
     /**
+     * ユーザーIDからユーザー情報を取得する
+     * 
+     * @param id 検索するユーザーID
+     * @return ユーザー情報。見つからない場合はnull
+     * @throws DaoException データベースアクセスに失敗した場合
+     */
+    public User findById(int id) throws DaoException {
+        String sql = "SELECT id, name, email, password_hash, created_at, updated_at FROM users WHERE id = ?";
+
+        try (Connection con = dbManager.getConnection();
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+
+            pstmt.setInt(1, id);
+            
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return new User(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("password_hash"),
+                        rs.getTimestamp("created_at").toLocalDateTime(),
+                        rs.getTimestamp("updated_at").toLocalDateTime()
+                    );
+                }
+                return null;
+            }
+
+        } catch (SQLException e) {
+            throw new DaoException("ユーザー情報の取得に失敗しました", e);
+        }
+    }
+
+    /**
      * メールアドレスからユーザー情報を取得する
      * 
      * @param email 検索するメールアドレス
